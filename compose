@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+ hemaapp1: # name of app which can be anything
+   image: hemahcl:appv1 # name of image i want to build
+   build: . # location of dockerfile
+   container_name: hemac11
+   ports:
+   - 1028:80
