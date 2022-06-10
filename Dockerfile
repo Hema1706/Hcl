@@ -1,3 +1,3 @@
 FROM nginx
 LABEL name=hema
-COPY ./usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
