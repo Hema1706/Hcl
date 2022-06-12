@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hemafinal-deploy
+  name: hemafinal-deploy
+  namespace: Hmea-project 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hemafinal-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hemafinal-deploy
+    spec:
+      containers:
+      - image: hema1706/hemahcl:appfinal
+        name: hemahcl
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        resources: {}
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hemafinal-deploy
+  name: hemalb1028
+  namespace: hema-project
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: hemafinal-deploy
+  type: NodePort
+status:
+  loadBalancer: {}
