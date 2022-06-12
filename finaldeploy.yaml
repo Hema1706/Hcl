@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hemafinal-deploy
   name: hemafinal-deploy
-  namespace: Hema-project 
+  namespace: hema-project 
 spec:
   replicas: 1
   selector:
